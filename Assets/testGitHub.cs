@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class testGitHub : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        
+        print("coucou");
     }
 
     // Update is called once per frame
@@ -15,4 +13,6 @@ public class testGitHub : MonoBehaviour
     {
         
     }
+
+
 }
