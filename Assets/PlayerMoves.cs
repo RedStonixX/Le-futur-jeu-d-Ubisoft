@@ -13,7 +13,7 @@ public class PlayerMoves : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
 
     void FixedUpdate()
-    {;
+    {
         PlayerDeplacement(horizontalMovement);
     }
 
