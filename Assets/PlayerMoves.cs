@@ -5,6 +5,11 @@ public class PlayerMoves : MonoBehaviour
     public float jumpForce;
 
     public bool isJumping;
+    public bool isGrounded = false;
+
+    public Transform GroundCheckL;
+    public Transform GroundCheckR;
+
 
     public Rigidbody2D rb;
     public SpriteRenderer spriteRenderer;
@@ -14,6 +19,9 @@ public class PlayerMoves : MonoBehaviour
 
     void FixedUpdate()
     {
+        isGrounded = Physics2D.OverlapArea(GroundCheckL.position, GroundCheckR.position);
+
+
         PlayerDeplacement(horizontalMovement);
     }
 
@@ -23,7 +31,7 @@ public class PlayerMoves : MonoBehaviour
 
         horizontalMovement = Input.GetAxis("Horizontal") * MoveSpeed * Time.fixedDeltaTime;
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             isJumping = true;
         }
